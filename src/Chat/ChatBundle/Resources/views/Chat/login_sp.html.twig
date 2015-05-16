@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('bundles/chat/js/jquery.min.js') }}" type="text/javascript"></script>	
+	<title>ログイン|franker</title>
+</head>
+<body>
+<h1>franker</h1>
+	<div id="body" class="cen">
+		<h2>ログイン</h2>
+		<div id="box_login">
+		{% if error %}
+    		<div style="color: red">ユーザー名またはパスワードに誤りがあります</div>
+		{% endif %}
+		<form method="post" action="{{ path('login_check') }}">
+			<p><input type="text" class="login"  id="username" name="_username" placeholder="ユーザー名" ></p>
+			<p><input type="password" class="login" id="pass" name="_password" placeholder="パスワード"></p>
+			<p><button type="submit" class="submit_btn">Login</button> <button　 onclick="history.back();" style="text-decoration: underline">戻る</button></p>
+		</form><br />
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/chat_css.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('bundles/chat/js/jquery.min.js') }}"></script>	
+	<script src="{{ asset('bundles/chat/js/chat.js') }}"></script>
+	<title>Room|Franker|PC</title>
+</head>
+    <body> 
+	<div id="body" data-url="{{ asset('') }}">
+	<div id="header">franker</div>
+
+	<div id="title">
+		<button class="float" type="submit">stop</button>
+		</form>
+	</div>
+   
+	<div id="ranking">
+	{# 質問の投票数によりランク付け #}
+		{% for data in rank %}
+   				{%  if data.state_type == "0"  %}
+				<div class="comm state"  data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/good_on.png') }}">   {{ data.text }} 
+				</div>
+				{% elseif data.state_type == "1" %}
+				<div class="quest state" data-auto_num="{{ data.auto_num }}" data-type="2">
+					<img src="{{ asset('img/ques040.gif') }}">   {{ data.text }}
+				</div>
+				{% elseif data.state_type == "2" %}
+				<div class="add state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/other_on.png') }}"> {{ data.text }}
+				</div>
+				{% else %}
+				<div class="me state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/i.png') }}">   {{ data.text }} 
+				</div>
+				{% endif %}
+		
+			{% endfor%}
+	</div>
+	</div>
+
+	<div id="contents">
+		{% for data in chat %}
+   				{%  if data.state_type == "0"  %}
+				<div class="comm state"  data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/good_on.png') }}">   {{ data.text }} 
+				</div>
+				{% elseif data.state_type == "1" %}
+				<div class="quest state" data-auto_num="{{ data.auto_num }}" data-type="2">
+					<img src="{{ asset('img/ques040.gif') }}">   {{ data.text }}
+				</div>
+				{% elseif data.state_type == "2" %}
+				<div class="add state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/other_on.png') }}"> {{ data.text }}
+				</div>
+				{% else %}
+				<div class="me state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/i.png') }}">   {{ data.text }} 
+				</div>
+				{% endif %}
+			{% endfor%}
+	</div>
+	</div>
+    </body>
+</html>

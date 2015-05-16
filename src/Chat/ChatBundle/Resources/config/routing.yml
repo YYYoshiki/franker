@@ -1,0 +1,60 @@
+chat_chat_homepage:
+    path:     /hello/{name}
+    defaults:	 { _controller: ChatChatBundle:Default:index }
+    
+chat_chat_index:
+    path:    /room/{common_id}
+    defaults:    { _controller: ChatChatBundle:Chat:index }
+    
+chat_chat_pc:
+    path:    /pc
+    defaults:    { _controller: ChatChatBundle:Chat:pc }
+ 
+chat_chat_classTop:
+    path:    /class_top
+    defaults:    { _controller: ChatChatBundle:Chat:classTop }
+    
+chat_chat_getComment:
+    path:    /get_comment
+    defaults:    { _controller: ChatChatBundle:Chat:getComment }
+    
+chat_chat_setComment:
+    path:    /set_comment
+    defaults:    { _controller: ChatChatBundle:Chat:setComment }
+
+chat_chat_top:
+    path:    /top
+    defaults:    { _controller: ChatChatBundle:Chat:top }    
+
+chat_chat_login:
+    path:    /login
+    defaults:    { _controller: ChatChatBundle:Chat:login } 
+    
+chat_chat_createclass:
+    path:    /admin/createclass
+    defaults:    { _controller: ChatChatBundle:Chat:createclass }
+    
+chat_chat_setCreateclass:
+    path:    /set_createclass
+    defaults:    { _controller: ChatChatBundle:Chat:setCreateclass } 
+
+chat_chat_getCreateclass:
+    path:    /get_createclass
+    defaults:    { _controller: ChatChatBundle:Chat:getCreateclass }
+
+chat_chat_menu:
+    path:    /menu
+    defaults:    { _controller: ChatChatBundle:Chat:menu }
+
+chat_chat_deleteclass:
+    path:    /admin/deleteclass
+    defaults:    { _controller: ChatChatBundle:Chat:deleteclass }
+
+chat_chat_roomdelete:
+    path:    /admin/{id}/roomdelete
+    defaults:    { _controller: ChatChatBundle:Chat:roomdelete }
+
+
+
+
+

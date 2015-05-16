@@ -1,0 +1,13 @@
+login:
+    pattern:   /login
+    defaults:  { _controller: ChatChatBundle:Chat:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+
+chat_chat:
+    resource: "@ChatChatBundle/Resources/config/routing.yml"
+    prefix:   /

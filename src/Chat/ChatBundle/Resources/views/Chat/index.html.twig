@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('bundles/chat/js/jquery.min.js') }}" type="text/javascript"></script>	
+	<script src="{{ asset('bundles/chat/js/chat.js') }}" type="text/javascript"></script>
+	<title>Room|Franker</title>
+</head>
+<body>
+<h1> franker</h1>
+		<div id="body" data-url="{{ asset('') }}">
+			<div id="staff">
+				<img src="{{ asset('img/good_on.png') }}">ココには疑問に思ったことや自分の意見を自由に書き込むことができます。
+			</div>
+			{# コメントタイプにより処理分け #}
+   			{% for data in chat %}
+   				{%  if data.state_type == "0"  %}
+				<div class="comm state"  data-auto_num="{{ data.auto_num }}" >
+					<img src="{{ asset('img/good_on.png') }}">   {% if data.par_id == false %} {{ data.text|nl2br }} {% else %}
+					<span>{{ data.parentcomment|nl2br }}</span>　{{ data.childcomment|nl2br }} {% endif %}
+				</div>
+				{% elseif data.state_type == "1" %}
+				<div class="quest state " id="{{ data.auto_num }}" data-auto_num="{{ data.auto_num }}" data-type="2" data-text="{{ data.text }}">
+					<img src="{{ asset('img/question.png') }}">   {% if data.par_id == false %} {{ data.text|nl2br }} {% else %}
+					<span>{{ data.parentcomment|nl2br }}</span>　{{ data.childcomment|nl2br }} {% endif %} 
+				</div>
+				{% elseif data.state_type == "2" %}
+				<div class="add state" data-auto_num="{{ data.auto_num }}" data-par_id="{{ data.par_id }}">
+					<img src="{{ asset('img/add.png') }}"> {% if data.par_id == false %} {{ data.text|nl2br }} {% else %}
+					<span>{{ data.parentcomment|nl2br }}</span>　{{ data.childcomment|nl2br }} {% endif %}
+				</div>
+				{% elseif data.state_type == "3" %}
+				<div class="good state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/good_sample.png') }}"> {% if data.par_id == false %} {{ data.text|nl2br }} {% else %}
+					<span>{{ data.parentcomment|nl2br }}</span>　{{ data.childcomment|nl2br }} {% endif %}
+				</div>
+				{% elseif data.state_type == "4" %}
+				<div class="bad state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/bad.png') }}"> {% if data.par_id == false %} {{ data.text|nl2br }} {% else %}
+					<span>{{ data.parentcomment|nl2br }}</span>　{{ data.childcomment|nl2br }} {% endif %}
+				</div>  
+				{% else %}
+				<div class="me state" data-auto_num="{{ data.auto_num }}">
+					<img src="{{ asset('img/i.png') }}">   {% if data.par_id == false %} {{ data.text|nl2br }} {% else %}
+					<span>{{ data.parentcomment|nl2br }}</span>　{{ data.childcomment|nl2br }} {% endif %} 
+				</div>
+				{% endif %}
+			{% endfor%}
+			</div>
+
+	
+			<ul class="chat_btn">
+            <li class="question" data-type="1">？</li>
+            <li class="maru" data-type="3">◯</li>
+            <li class="batsu" data-type="4">×</li>
+            <li class="post" style="display:none" data-type="2">引用</li>
+            <li class="reset" style="display:none">戻す</li>
+            </ul>  
+		<div class="send">
+			<form method="post" action="{{ path('chat_chat_setComment') }}" id="send_form" >
+				<span><div id="hatena_img"></div><div id="hatena"></div></span>
+				<p><textarea name="text" id="chat" rows="1" cols="25" placeholder="思ったことを自由に"　required="required" wrap="hard" ></textarea>
+				<input type="hidden" id="par_id" name="par_id" />
+				<input type="hidden" id="state_type" name="state_type" />
+				<input type="hidden" id="common_id" name="common_id" />
+				<button type="submit" class="submit_btn_chat" id="submit_btn_chat">送信</button></p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

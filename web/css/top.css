@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+
+/*----- リセット -----*/
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, p,
+a, dl, dt, dd, ol, ul, li,
+form, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+ol,ul{
+	list-style: none;
+}
+
+ol, ul.navi{
+  list-style: none;
+  	margin: 10px;
+/*	border-radius: 10px;
+	border: solid 1px #bbbbbb ;*/
+}
+
+html {
+  font-size:100%;
+}
+
+h1{
+	text-align:center;
+	font-size:150%;
+	font-family: 'Righteous', cursive;
+	/* background-color: rgba(88,190,137,1); */
+	color: #ffffff;
+}
+
+h2{
+	font-size:120%; 
+	text-align:center;
+}
+
+h3{
+	font-size: 100%;
+	text-align:center;
+}
+
+p{
+	text-align:center;
+}
+
+body {
+  font-size: 1em;
+  color: #333;
+  font-family: Meiryo , 'Helvetica Neue', Helvetica, Droid, Arial, Verdana, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN';
+  line-height: 2;
+  letter-spacing: 0.1em;
+  background-color: #f9f9f9;
+}
+
+a{
+	color:#ffffff;
+	font-size:100%;
+	text-decoration::underline;
+}
+
+img { 
+    max-width: 100%; 
+    height:auto;
+}
+
+img#three { 
+    max-width: 100%; 
+    height:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+img#five { 
+    max-width: 100%; 
+    height:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+
+table{
+	margin: 10px;
+	margin-left:2px;
+}
+
+a {
+text-decoration: none;
+}
+
+#one{
+	background-color: rgba(88,190,137,1);
+	color: #ffffff;
+	text-align:center;
+}
+
+#two{
+	background-color:#F8823C;
+	color: #ffffff;
+}
+
+#three{
+	background-color:#e7e7e7;
+	color: #ffffff;
+}
+
+#four{
+	background-color:#29cba7;
+ 	color: #ffffff; 
+}
+
+#five{
+	background-color:#e7e7e7;
+}
+
+#slide{
+	background-color:#F8823C;
+	color:#ffffff;
+}
+
+#footer{
+	background-color:#29cba7;
+ 	color: #ffffff; 
+}
+
+#copy{
+	 	margin-left:5px;
+}
+
+iframe{
+	max-width: 100%; 
+}
+
+
+
+

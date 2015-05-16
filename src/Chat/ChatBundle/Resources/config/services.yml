@@ -1,0 +1,7 @@
+parameters:
+#    chat_chat.example.class: Chat\ChatBundle\Example
+
+services:
+#    chat_chat.example:
+#        class: %chat_chat.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

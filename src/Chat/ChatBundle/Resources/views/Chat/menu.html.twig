@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+	<title>メニュー|Franker</title>
+</head>
+<body>
+<a href="{{ path('chat_chat_top') }}" id="top"><h1>franker</h1></a>
+	<div id="Cbody" class="cen">
+	<h2>一般メニュー</h2>
+	<h3>
+		<ul class="navi">
+			<li class="today"><a href="{{ path('chat_chat_classTop')}}" class="today">ルーム一覧</a></li>
+		</ul>
+	</h3><br>
+	<h2>管理メニュー</h2>
+	<p><u>ここからは管理者のみの機能です。</u></p>
+	<h3>
+		<ul class="navi">
+			<li class="today"><a href="{{ path('chat_chat_createclass')}}" class="today" >ルームを作成する</a></li>
+			<li class="today"><a href="{{ path('chat_chat_deleteclass')}}" class="today" >ルームを削除する</a></li>
+		</ul>
+	</h3>
+	</div>
+</body>
+</html>

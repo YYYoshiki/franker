@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+	<title>新規登録|franker</title>
+</head>
+<body>
+<h1>franker</h1>
+	<div id="body" class="cen">
+		<h2>新規登録</h2>
+		<div id="box_login">
+		<p>無料でfrankerを使うために<br />新規登録をする</p>
+		<form method="post" action="{{ path('chat_chat_setRegister') }}">
+			<p><input type="text" class="login"  id="number" name="number" placeholder="学籍番号" ></p>
+			<p><input type="password" class="login" id="password" name="password" placeholder="パスワード"></p>
+			<p><button type="submit" class="submit_btn">登録</button></p>
+		</form><br />
+	</div>
+</div>
+</body>
+</html>

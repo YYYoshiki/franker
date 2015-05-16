@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+	<title>ルーム一覧|Franker</title>
+</head>
+<body>
+<h1>franker</h1>
+</p><a href="{{ path('chat_chat_menu') }}">　メニューに戻る</a></p>
+	<div id="Cbody" class="cen">
+	<p>ルームの一覧</p>
+		<h3>
+		<ul class="navi">
+			 {% for data in class %}
+			 	<li class="today"><a href="{{ path('chat_chat_index' , {'common_id': data.classid}) }}" class="today">{{ data.classname }}<br>{{ data.create_time|date("Y/m/d H:i:s") }}</a></li>
+   			 {% endfor%}
+		</ul>
+		</h3>
+	</div>
+</body>
+</html>

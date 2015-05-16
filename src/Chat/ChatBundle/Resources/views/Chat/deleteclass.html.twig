@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('bundles/chat/js/jquery.min.js') }}" type="text/javascript"></script>	
+	<script src="{{ asset('bundles/chat/js/deleteclass.js') }}" type="text/javascript"></script>
+	<title>ルーム削除|Franker</title>
+</head>
+<body>
+<h1>franker</h1>
+</p><a href="{{ path('logout') }}">　ログアウト</a><br><a href="{{ path('chat_chat_menu') }}">　管理メニュー</a></p>
+	<div id="Cbody" class="cen">
+	<p>ルーム削除</p>
+		<h3>
+		<ul class="navi">
+			 {% for data in class %}
+<ul class="accordion">
+    <li class="delete">
+        <p><span class="color" style="color:#ffffff"><a class="today">{{ data.classname }}</a>{{ data.create_time|date("Y/m/d H:i:s") }}</span></p>
+        <ul class="truedelete">
+            <li><a href="{{ path('chat_chat_roomdelete' , {'id': data.auto_num}) }}" class="today">⇒本当に削除する</a></li>
+        </ul>
+    </li>
+</ul>
+			{% endfor%}
+		</ul>
+		</h3>
+	</div>
+</body>
+</html>
