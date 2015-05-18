@@ -288,6 +288,7 @@ $(function(){
 	
 
 });
+//時刻で10以下の時間だった場合、時間の前に0をつける
 function zeroBind(num){
 	if(num < 10){
 		return "0" + num;
