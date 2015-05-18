@@ -12,7 +12,7 @@ $(function(){
 		
 			lastId = $lastComment.data("auto_num");
 			
-		//	return 0;
+
 			
 
 		}
